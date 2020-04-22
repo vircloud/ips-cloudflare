@@ -13,7 +13,8 @@ IPS="/root/blacklist.txt"
 for IPADDR in `cat $IPS`
 do
  echo "正在添加 IP：$IPADDR"
-# curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$ZONESID/firewall/access_rules/rules" \
+#这是域名级屏蔽 curl -s -X POST "https://api.cloudflare.com/client/v4/zones/$ZONESID/firewall/access_rules/rules" \
+#这是账户级屏蔽 curl -s -X POST "https://api.cloudflare.com/client/v4/accounts/$ACCOUNTID/firewall/access_rules/rules" \
    -H "X-Auth-Email: $CFEMAIL" \
    -H "X-Auth-Key: $CFAPIKEY" \
    -H "Content-Type: application/json" \
